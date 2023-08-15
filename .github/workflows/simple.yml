@@ -1,5 +1,5 @@
-name: example
-run-name: example
+name: ghactions tutorial
+run-name: example demo
 on: push
 jobs:
   run-shell-cmds:
@@ -15,5 +15,5 @@ jobs:
         run: | 
           import platform
           print(platform.processor())
-          shell: python
+        shell: python
 
