@@ -1,6 +1,10 @@
 name: shell cmds workflow
 run-name: shell cmds workflow
-on: push
+on: 
+  # push
+  pull_request: 
+    types: [closed,reopened,opened]
+
 jobs:
   run-shell-cmds:
     runs-on: ubuntu-latest
