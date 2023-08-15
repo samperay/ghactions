@@ -1,9 +1,0 @@
-name: example
-run-name: example
-on: push
-jobs:
-  demo:
-    runs-on: ubuntu-latest
-    steps:
-      - name: first-step
-        run: echo hello world
