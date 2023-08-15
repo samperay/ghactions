@@ -1,0 +1,1 @@
+echo "Hello world, welcome to tutorials of github actions"
