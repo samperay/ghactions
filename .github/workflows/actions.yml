@@ -3,7 +3,7 @@ run-name: actions workflow
 on: 
   # push
   schedule:
-    - cron: "0/5 * * * *"
+    - cron: "* * * * *"
 
 jobs:
     run-github-actions:
