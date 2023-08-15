@@ -1,5 +1,5 @@
-name: ghactions tutorial
-run-name: example demo
+name: shell cmds workflow
+run-name: shell cmds workflow
 on: push
 jobs:
   run-shell-cmds:
