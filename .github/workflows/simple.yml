@@ -3,7 +3,7 @@ run-name: shell cmds workflow
 on: 
   # push
   pull_request: 
-    types: [closed,reopened,opened]
+    types: [reopened]
 
 jobs:
   run-shell-cmds:
