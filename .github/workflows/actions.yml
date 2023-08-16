@@ -15,7 +15,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: webhook trigger build
-              run: "${{ github.event.client_payload.env }}"
+              run: echo "${{ github.event.client_payload.env }}"
             - name: list files
               run: |
                 pwd
