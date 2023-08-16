@@ -3,7 +3,8 @@ run-name: actions workflow
 on: 
   push: 
     branches: 
-      - "dev1"
+      - "!dev1"
+      - "dev"
 
 
   # schedule:
