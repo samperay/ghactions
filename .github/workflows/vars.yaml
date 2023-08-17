@@ -10,10 +10,28 @@ jobs:
         env: 
             JOB_ENV: env for job
         steps:
-            - name: display workflow env vars
+            - name: display all envs
               env:
                 STEP_ENV: env for step
               run: |
+                echo "WF_ENV: ${WF_ENV}"
+                echo "JOB_ENV: ${JOB_ENV}"
+                echo "STEP_ENV: ${STEP_ENV}"
+
+            - name: display workflow and job env
+              run: |
+                echo "WF_ENV: ${WF_ENV}"
+                echo "JOB_ENV: ${JOB_ENV}"
+                echo "STEP_ENV: ${STEP_ENV}"
+    log-default-env:
+        runs-on: ubuntu-latest
+        steps:
+            - name: display all default envs
+              run: |
+                echo "GITHUB_ACTOR: ${GITHUB_ACTOR}"
+                echo "GITHUB_JOB: ${GITHUB_JOB}"
+                echo "RUNNER_ARCH: ${RUNNER_ARCH}"
+                echo "RUNNER_OS: ${RUNNER_OS}"
                 echo "WF_ENV: ${WF_ENV}"
                 echo "JOB_ENV: ${JOB_ENV}"
                 echo "STEP_ENV: ${STEP_ENV}"
