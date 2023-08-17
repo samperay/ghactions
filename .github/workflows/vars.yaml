@@ -7,8 +7,8 @@ env:
 jobs:
     create_issue:
         runs-on: ubuntu-latest
-        permissions:
-          issues: write
+        # permissions:
+        #   issues: write
         steps:
           - name: push a random file
             run: |
@@ -22,6 +22,7 @@ jobs:
                 git pull 
                 ls -la
                 echo $RANDOM >> random.txt
+                ls -la
                 git add -A
                 git commit -m "added random file"
                 git push 
