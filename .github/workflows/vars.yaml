@@ -2,7 +2,7 @@ name: custom vars
 on:
     push
 env:
-    WF_ENV: env for workflow
+    WF_ENV: ${{ secrets.WF_ENV }}
 
 jobs:
     log-env:
