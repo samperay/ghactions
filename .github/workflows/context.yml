@@ -46,8 +46,12 @@ jobs:
           run: echooo "hello"
           
         - name: step2
+        #   if: failure()
           run: echo "I need this step to execute even if previous step fails"
-          if: failure()
+          
+        - name: step3
+          if: always()
+          run: echo "this step will always run, success or failed step"
           
 
 
