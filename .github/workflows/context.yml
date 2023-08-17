@@ -42,16 +42,18 @@ jobs:
   func_status_checks:
     runs-on: ubuntu-latest
     steps:
-        - name: step1
+        - name: step to fail
           run: echooo "hello"
           
-        - name: step2
-        #   if: failure()
+        - name: run even if failed
+          if: failure()
           run: echo "I need this step to execute even if previous step fails"
           
-        - name: step3
+        - name: run always
           if: always()
           run: echo "this step will always run, success or failed step"
           
-
+        - name: run success
+          run: echo "run when none of previous step failed" 
+          if: success()
 
