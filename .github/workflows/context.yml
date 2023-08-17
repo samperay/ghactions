@@ -29,3 +29,14 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+  functions_expressions:
+    runs-on: ubuntu-latest
+    steps:
+        - name: expressions
+          run: |
+            echo contains('Hello world', 'llo')
+            echo contains(fromJSON('["push", "pull_request"]'), github.event_name)
+            echo startsWith('Hello world', 'He')
+            echo endsWith('Hello world', 'ld')
+
+
