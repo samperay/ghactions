@@ -44,9 +44,9 @@ jobs:
     steps:
         - name: step to fail
           run: echooo "hello"
+          continue-on-error: true
           
         - name: run even if failed
-          if: failure()
           run: echo "I need this step to execute even if previous step fails"
           
         - name: run always
@@ -56,4 +56,6 @@ jobs:
         - name: run success
           run: echo "run when none of previous step failed" 
           if: success()
+
+        
 
