@@ -14,8 +14,8 @@ jobs:
             run: |
                 git init 
                 git remote add origin "https://samperay:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
-                git config --global user.email "mybot@gmail.com"
-                git config --global user.name "mybot"
+                git config --global user.email "samperay@gmail.com"
+                git config --global user.name "samperay"
                 git fetch
                 git checkout master
                 git branch --set-upstream-to=origin/master
