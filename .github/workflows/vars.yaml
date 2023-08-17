@@ -1,0 +1,14 @@
+name: custom vars
+on:
+    push
+env:
+    WF_ENV: env for workflow
+
+jobs:
+    log-env:
+        runs-on: ubuntu-latest
+        steps:
+            - name: display workflow env vars
+              run: |
+                echo "WF_ENV: ${WF_ENV}"
+
