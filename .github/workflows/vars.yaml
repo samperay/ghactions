@@ -13,7 +13,7 @@ jobs:
           - name: push a random file
             run: |
                 git init 
-                git remote add origin "https://github.com/$GITHUB_REPOSITORY.git"
+                git remote add origin "https://samperay:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
                 git config --global user.email "mybot@gmail.com"
                 git config --global user.name "mybot"
                 git fetch
