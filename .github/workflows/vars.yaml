@@ -25,7 +25,7 @@ jobs:
                 ls -la
                 git add -A
                 git commit -m "added random file"
-                git push 
+                git push
 
           - name: Create issue using REST API
             run: |
