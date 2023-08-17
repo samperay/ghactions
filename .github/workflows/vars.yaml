@@ -7,8 +7,11 @@ env:
 jobs:
     log-env:
         runs-on: ubuntu-latest
+        env: 
+            JOB_ENV: env for job
         steps:
             - name: display workflow env vars
               run: |
                 echo "WF_ENV: ${WF_ENV}"
+                echo "JOB_ENV: ${JOB_ENV}"
 
