@@ -1,9 +1,11 @@
 name: shell cmds workflow
 run-name: shell cmds workflow
 on: 
-  # push
-  pull_request: 
-    types: [closed,reopened,opened]
+  push:
+    branches: 
+      - master
+  # pull_request: 
+  #   types: [closed,reopened,opened]
 
 jobs:
   run-shell-cmds:
@@ -11,10 +13,12 @@ jobs:
     steps:
       - name: echo string
         run: echo "hello world"
+
       - name: multiline script
         run: |
           node -v
           npm -v 
+
       - name: python command 
         run: | 
           import platform
@@ -22,9 +26,12 @@ jobs:
         shell: python
   run-windows-cmds:
     runs-on: windows-latest
+    needs: 
+      - run-shell-cmds
     steps:
       - name: Directory
         run: Get-location
+
       - name: Directory bash
         run: pwd
         shell: bash
