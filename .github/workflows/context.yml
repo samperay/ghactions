@@ -34,9 +34,8 @@ jobs:
     steps:
         - name: expressions
           run: |
-            echo contains('Hello world', 'llo')
-            echo contains(fromJSON('["push", "pull_request"]'), github.event_name)
-            echo startsWith('Hello world', 'He')
-            echo endsWith('Hello world', 'ld')
+            echo ${{ contains(fromJSON('["push", "pull_request"]'), github.event_name) }}
+            echo ${{ startsWith('Hello world', 'He') }}
+            echo ${{ endsWith('Hello world', 'ld') }}
 
 
