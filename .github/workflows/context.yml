@@ -43,5 +43,7 @@ jobs:
     steps:
         - name: step1
           run: echo000 "hello"
+        - name: step2
+          run: echo "I need this step to execute even if previous step fails"
 
 
