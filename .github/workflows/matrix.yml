@@ -1,4 +1,4 @@
-name: startergy matrix
+name: strategy matrix
 on:
     push
 
@@ -8,6 +8,18 @@ jobs:
             matrix:
                 node_version: [6, 7, 8]
                 os: ["ubuntu-latest","windows-latest"]
+                exclude:
+                    - os: ubuntu-latest
+                      node_version: 6
+                    - os: windows-latest
+                      node_version: 8
+                include:
+                    - os: ubuntu-latest
+                      node_version: 9
+                      is_ubuntu_9: 9
+        
+        env:
+            IS_UBUNTU_9: ${{ matrix.is_ubuntu_9 }}
         runs-on: ${{ matrix.os }}
         steps:
             - name: log node version installed in ubuntu
@@ -18,4 +30,6 @@ jobs:
                 node-version: ${{ matrix.node_version}}
 
             - name: log node version currenly set to
-              run: node -v
+              run: |
+                node -v
+                echo $IS_UBUNTU_9
