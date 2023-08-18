@@ -1,5 +1,4 @@
 name: shell cmds workflow
-run-name: shell cmds workflow
 on: 
   push:
     branches: 
