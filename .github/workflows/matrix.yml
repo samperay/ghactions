@@ -1,4 +1,4 @@
-name: versions
+name: startergy matrix
 on:
     push
 
@@ -7,14 +7,15 @@ jobs:
         strategy:
             matrix:
                 node_version: [6, 7, 8]
-        runs-on: ubuntu-latest
+                os: ["ubuntu-latest","windows-latest"]
+        runs-on: ${{ matrix.os }}
         steps:
-            - name: log node version
+            - name: log node version installed in ubuntu
               run: node -v
             
             - uses: actions/setup-node@v1
               with:
                 node-version: ${{ matrix.node_version}}
 
-            - name: log node version
+            - name: log node version currenly set to
               run: node -v
