@@ -4,6 +4,8 @@ on:
 
 jobs:
     slack_notify:
+        permissions:
+            write-all
         runs-on: ubuntu-latest
         steps:
             - name: send incoming slack message
