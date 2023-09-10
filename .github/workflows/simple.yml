@@ -15,14 +15,15 @@ on:
           description: 'Test scenario tags'
           required: false
           type: boolean
-        # environment:
-        #   description: 'Environment to run tests against'
-        #   type: environment
-        #   required: true
+        envs:
+          description: 'environments'
+          type: environment
+          required: true
 jobs:
     log-the-inputs:
         runs-on: ubuntu-latest
         steps:
         - run: |
-            echo LEVEL: ${{ inputs.logLevel }}
-            echo TAGS: ${{ inputs.tags }}
+            echo log_level: ${{ inputs.logLevel }}
+            echo tags: ${{ inputs.tags }}
+            echo env: ${{ inputs.envs }}
