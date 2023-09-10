@@ -1,4 +1,4 @@
-name: workflow-rin
+name: workflow-run
 on:
     workflow_run:
         workflows: [simple]
