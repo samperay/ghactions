@@ -1,0 +1,15 @@
+name: workflow-rin
+on:
+    workflow_run:
+        workflows: [simple]
+        types: [completed]
+
+jobs:
+    run_this_workflow:
+        runs-on: ubuntu-latest
+        steps:
+            - name: execute this workflow
+              run: echo "this workflow to be executed when 'simple' workflow job has been completed"
+
+
+            
