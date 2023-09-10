@@ -7,7 +7,6 @@ jobs:
     simple_deps_jobs:
         runs-on: ubuntu-latest
         steps:
-            - name: run after main job completed
-              run: echo "I was run after my boss job(simple) completed."
+            - run: echo "I was run after my boss job(simple) completed."
 
     
